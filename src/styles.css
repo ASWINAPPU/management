@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+.iocn-link {
+  @apply flex items-center justify-between;
+}
+.linktag {
+  @apply flex items-center no-underline;
+}
+.link_name {
+  @apply text-lg font-normal text-white;
+}
+.sub-menu {
+  @apply pt-1.5 pr-1.5 pb-3.5 pl-20 mt-2.5 bg-sub hidden;
+}
+.sidebar.close {
+  @apply w-20;
+}
+.sidebar.close .logo-details .logo_name {
+  @apply delay-0 opacity-0 pointer-events-none;
+}
+.sidebar.close .nav-links {
+  @apply overflow-visible;
+}
+.sidebar .nav-links::-webkit-scrollbar {
+  @apply hidden;
+}
+.sidebar.close .nav-links li a .link_name {
+  @apply opacity-0 pointer-events-none;
+}
+.sidebar.close .nav-links li .sub-menu {
+  @apply absolute left-full -top-2.5 mt-0 py-2.5 px-5 opacity-0 block pointer-events-none duration-0 rounded-r-md cus:hidden;
+}
+.sidebar.close .nav-links li:hover .sub-menu {
+  @apply top-0 opacity-100 pointer-events-auto transition-all duration-400 ease-linear;
+}
+.sidebar.close .nav-links li .sub-menu .link_name {
+  @apply text-lg opacity-100 block ;
+}
+.sidebar .nav-links li .sub-menu.blank {
+  @apply opacity-0 pointer-events-none pr-5 pl-4 pt-0.7 pb-1.5;
+}
+.sidebar .nav-links li:hover .sub-menu.blank {
+  @apply top-1/2 translate-y-2/4;
+}
+.sidebar.close ~ .home-section {
+  @apply left-17;
+}
+.sidebar .nav-links li .sub-menu a{
+    @apply py-1.7;
+}
+.home-section {
+  width: calc(100% - 260px);
+}
+.sidebar.close ~ .home-section {
+  width: calc(100% - 78px);
+}
+
+.sidebar .logo-details i {
+  @apply leading-logo;
+}
+
+.sidebar .nav-links li i {
+  @apply leading-logo;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .cursor-pointer{
+    cursor: pointer;
+  }
+@tailwind utilities;

@@ -1,0 +1,12 @@
+<div w-65 fixed top-0 left-0 h-full z-50 transition-all ease-linear duration-500 bg-sidebar [ngClass]="showSideBar ? 'close' : ''" class="sidebar">
+    <div class="logo-details h-15 w-full flex items-center">
+      <i (click)="clickBoxMenu()" class='cursor-pointer bx bxl-c-plus-plus'></i>
+      <span class="logo_name  transition duration-300 ease-linear pointer-events-none delay-100 font-semibold text-xl text-white">CodingLab</span>
+    </div>
+    <ul class="nav-links h-full pt-7 pb-37 overflow-auto list-none">
+        <ng-container *ngFor='let item of menuItems;'>
+            <app-menubar-items [menuItem]='item' ></app-menubar-items>
+        </ng-container>
+    </ul>
+  </div>
+  

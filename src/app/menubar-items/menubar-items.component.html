@@ -1,0 +1,29 @@
+
+<li [ngClass]="menuItem?.showMenu ? 'showMenu' : ''" *ngIf="menuItem?.hasSubMenu">
+    <div class="iocn-link">
+        <a>
+          <i class='bx bx-collection'></i>
+          <span class="link_name">{{menuItem?.name}}</span>
+        </a>
+        <i class='bx bxs-chevron-down  h-13
+        min-w-7
+        text-center
+        leading-logo
+        text-white text-xl
+        cursor-pointer
+        transition-all
+        duration-300
+        ease-linear arrow' (click)="onArrowClick()"></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a class="link_name">{{menuItem?.name}}</a></li>
+        <li><a *ngFor="let submenu of menuItem?.submenu" class="cursor-pointer">{{submenu}}</a></li>
+      </ul>
+</li>
+
+<li *ngIf="!menuItem?.hasSubMenu">
+    <a>
+        <i class='bx bx-grid-alt'></i>
+        <span class="link_name">{{menuItem?.name}}</span>
+      </a>
+</li>
